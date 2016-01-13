@@ -13,8 +13,7 @@ void setup() {
   BTB.show(); BTA.show(); ST12.show() ;
 
   matrix.begin();
-  matrix.setTextWrap(false);
-  matrix.setBrightness(40);
+  matrix.setBrightness(20);
   matrix.fillScreen(0); //blank
 
   //button stuff

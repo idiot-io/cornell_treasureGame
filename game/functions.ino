@@ -74,7 +74,7 @@ void matrix_mag() {
 
 void matrix_circle() {
   matrix.fillScreen(0);
-  matrix.setCursor(0, 0);
-  matrix.print("O");
+  matrix.setCursor(1, 1);
+  matrix.print("X");
   matrix.show();
 }
