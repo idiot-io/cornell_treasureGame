@@ -15,7 +15,7 @@ void setup() {
   matrix.begin();
   matrix.setTextWrap(false);
   matrix.setBrightness(40);
-  matrix.setTextColor(colors[0]);
+  matrix.fillScreen(0); //blank
 
   //button stuff
   pinMode(BTN_pin, INPUT_PULLUP);
@@ -23,10 +23,13 @@ void setup() {
   debouncer.interval(20);
 
   index = 0;
-  flicker_all(2, 2000);
+  //flicker_all(2, 2000);
+
+  matrix_circle();
 }
 
 void loop() {
+  /*
   // Update the Bounce instance
   debouncer.update();
   if (debouncer.fell()) buttonPressTimeStamp = millis();
@@ -44,5 +47,6 @@ void loop() {
   }
 
   stages(index);
+  */
 }
 
