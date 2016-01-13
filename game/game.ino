@@ -40,7 +40,7 @@ void loop() {
     buttonPressTimeStamp = millis();
     if (buttonPressTimeStamp > 2000) {
       index = 12; //reset
-      if (DEBUG) Serial.println(restart);
+      if (DEBUG) Serial.println("restart");
     } else {
       index++;
       if (DEBUG) Serial.println(index);
