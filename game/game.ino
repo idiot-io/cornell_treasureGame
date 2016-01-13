@@ -37,14 +37,14 @@ void loop() {
 
   if ( debouncer.fell()  ) {
     Serial.println( millis() - buttonPressTimeStamp );
-    buttonPressTimeStamp = millis();
-    if (buttonPressTimeStamp > 2000) {
+    if (millis() - buttonPressTimeStamp  > 2000) {
       index = 12; //reset
       if (DEBUG) Serial.println("restart");
     } else {
       index++;
       if (DEBUG) Serial.println(index);
     }
+    buttonPressTimeStamp = millis();
   }
 
   stages(index);
