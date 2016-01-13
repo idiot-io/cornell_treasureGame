@@ -3,8 +3,6 @@
 #define DEBUG 1
 
 #include "header.h" //boring stuff in another tab
-bool oldState = HIGH;
-int index = 0;
 
 void setup() {
   if (DEBUG) Serial.begin(57600);
@@ -22,11 +20,7 @@ void setup() {
   pinMode(BTN_pin, INPUT_PULLUP);
   debouncer.attach(BTN_pin);
   debouncer.interval(20);
-
 }
-
-int x    = matrix.width();
-int pass = 0;
 
 void loop() {
   // Update the Bounce instance :

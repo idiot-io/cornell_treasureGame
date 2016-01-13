@@ -27,14 +27,16 @@ Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, pixpin_grid,
                             NEO_MATRIX_TOP     + NEO_MATRIX_RIGHT +
                             NEO_MATRIX_COLUMNS + NEO_MATRIX_PROGRESSIVE,
                             NEO_GRB            + NEO_KHZ800);
-
+int x    = matrix.width();
+int pass = 0;
 const uint16_t colors[] = {
   matrix.Color(255, 0, 0), matrix.Color(0, 255, 0), matrix.Color(0, 0, 255)
 };
 
 // Instantiate a Bounce object :
-
 #define BTN_pin 2                // button on pin 2
 Bounce debouncer = Bounce();
 unsigned long buttonPressTimeStamp;
+int index = 0;
+
 
