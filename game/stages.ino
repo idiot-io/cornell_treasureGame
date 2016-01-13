@@ -4,12 +4,14 @@ void stages(int i) {
       if (!done) {
       case 1:
         //  MATRIX = first icon (magnifying   glass)
-        matrix_mag();
+        matrix.fillScreen(0);
+        sprite(magnify, RED);
         done = 1;
         break;
       case 2:
         //MATRIX   = second icon (circle)
-        matrix_circle();
+        matrix.fillScreen(0);
+        sprite(smiley, RED);
         done = 1;
         break;
       case 3:
@@ -19,12 +21,14 @@ void stages(int i) {
         break;
       case 4:
         //MATRIX   = first icon (magnifying glass)
-        matrix_mag();
+        matrix.fillScreen(0);
+        sprite(magnify, RED);
         done = 1;
         break;
       case 5:
         //MATRIX   = second icon (cercle)
-        matrix_circle();
+        matrix.fillScreen(0);
+        sprite(smiley, RED);
         done = 1;
         break;
       case 6:

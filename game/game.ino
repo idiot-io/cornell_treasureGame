@@ -13,7 +13,7 @@ void setup() {
   BTB.show(); BTA.show(); ST12.show() ;
 
   matrix.begin();
-  matrix.setBrightness(20);
+  matrix.setBrightness(40);
   matrix.setTextWrap(false);
   matrix.fillScreen(0); //blank
 
@@ -23,19 +23,12 @@ void setup() {
   debouncer.interval(20);
 
   index = 0;
-  //flicker_all(2, 2000);
+  flicker_all(2, 2000);
 
 }
 
 void loop() {
-  
-  sprite(smiley, RED);
-  matrix.fillScreen(0);
-  delay(5000);
-  sprite(magnify,RED);
-  matrix.fillScreen(0);
-  delay(5000);
-  /*
+ 
     // Update the Bounce instance
     debouncer.update();
     if (debouncer.fell()) buttonPressTimeStamp = millis();
@@ -53,6 +46,6 @@ void loop() {
     }
 
     stages(index);
-  */
+  
 }
 
