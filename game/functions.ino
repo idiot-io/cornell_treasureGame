@@ -30,8 +30,7 @@ void flicker_ST12(int loop_times, int delay_time) {
   }
 }
 
-void flicker_all(int loop_times, int delay_time) {
-  for (int jjj = 0; jjj < loop_times; jjj++) {
+void alloff(){
     for (int iii = 0; iii < pixcount_BTB; iii++)
       BTB.setPixelColor(iii, BTcolors[0]);
     for (int iii = 0; iii < pixcount_BTA; iii++)
@@ -40,8 +39,10 @@ void flicker_all(int loop_times, int delay_time) {
       ST12.setPixelColor(iii, BTcolors[0]);
 
     BTB.show(); BTA.show(); ST12.show();
-    delay(200);
+}
 
+void flicker_all(int loop_times, int delay_time) {
+  for (int jjj = 0; jjj < loop_times; jjj++) {
     for (int iii = 0; iii < pixcount_BTB; iii++)
       BTB.setPixelColor(iii, BTcolors[1]);
     for (int iii = 0; iii < pixcount_BTA; iii++)
@@ -51,9 +52,30 @@ void flicker_all(int loop_times, int delay_time) {
 
     BTB.show(); BTA.show(); ST12.show();
     delay(200);
+
+    for (int iii = 0; iii < pixcount_BTB; iii++)
+      BTB.setPixelColor(iii, BTcolors[0]);
+    for (int iii = 0; iii < pixcount_BTA; iii++)
+      BTA.setPixelColor(iii, BTcolors[0]);
+    for (int iii = 0; iii < pixcount_ST12; iii++)
+      ST12.setPixelColor(iii, BTcolors[0]);
+
+    BTB.show(); BTA.show(); ST12.show();
+    delay(200);
   }
 }
 
+void matrix_mag() {
+  matrix.fillScreen(0);
+  matrix.setCursor(x, 0);
+  matrix.print(F("X"));
+  if (--x < -36) {
+    x = matrix.width();
+    if (++pass >= 3) pass = 0;
+    matrix.setTextColor(colors[pass]);
+  }
+  matrix.show();
+}
 
 void matrix_circle() {
   matrix.fillScreen(0);

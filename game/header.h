@@ -14,14 +14,9 @@
 #define pixcount_grid 64
 #define pixcount_ST12 12
 #define pixcount_BTA 11 //bta1 is 2 leds, rest are groups of 3
-int bta1 = 0;
-int bta3 = 2;
-int bta5 = 5;
-int bta7 = 8;
+int bta1 = 0,  bta3 = 2, bta5 = 5,  bta7 = 8;
 #define pixcount_BTB 9 // groups of 3
-int btb2 = 0;
-int btb4 = 3;
-int btb6 = 6;
+int btb2 = 0, btb4 = 3, btb6 = 6;
 
 Adafruit_NeoPixel BTA = Adafruit_NeoPixel(pixcount_BTA, pixpin_BTA, NEO_GRB);
 Adafruit_NeoPixel BTB = Adafruit_NeoPixel(pixcount_BTB, pixpin_BTB, NEO_GRB);
@@ -30,11 +25,11 @@ Adafruit_NeoPixel ST12 = Adafruit_NeoPixel(pixcount_ST12, pixpin_ST12, NEO_GRB);
 //you can also use plain (rrr,ggg,bbb) instead of this
 const int num_colors = 5;
 const static uint32_t BTcolors[num_colors] = {
+  0x000000,     //black
   0xff0000,    // red
   0x00ff00,    // green
   0x0000ff,    // blue
-  0x3f3f00,    // red + green
-  0x003f3f     // green + blue
+  0xffffff,    // white
 };
 
 
@@ -58,5 +53,5 @@ const uint16_t colors[] = { //the colors we use
 Bounce debouncer = Bounce();
 unsigned long buttonPressTimeStamp;
 int index = 0;
-
+boolean done = false;
 
