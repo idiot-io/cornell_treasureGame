@@ -14,6 +14,7 @@ void setup() {
 
   matrix.begin();
   matrix.setBrightness(20);
+  matrix.setTextWrap(false);
   matrix.fillScreen(0); //blank
 
   //button stuff
@@ -24,15 +25,21 @@ void setup() {
   index = 0;
   //flicker_all(2, 2000);
 
-  matrix_circle();
 }
 
 void loop() {
+  
+  sprite(smiley, RED);
+  matrix.fillScreen(0);
+  delay(5000);
+  sprite(magnify,RED);
+  matrix.fillScreen(0);
+  delay(5000);
   /*
-  // Update the Bounce instance
-  debouncer.update();
-  if (debouncer.fell()) buttonPressTimeStamp = millis();
-  if ( debouncer.rose()  ) {
+    // Update the Bounce instance
+    debouncer.update();
+    if (debouncer.fell()) buttonPressTimeStamp = millis();
+    if ( debouncer.rose()  ) {
     if (DEBUG) Serial.println(millis() - buttonPressTimeStamp);
     if (millis() - buttonPressTimeStamp > 2000) {
       index = 12; //reset
@@ -43,9 +50,9 @@ void loop() {
       done = 0 ; //run the stage function
       if (DEBUG) Serial.println(index);
     }
-  }
+    }
 
-  stages(index);
+    stages(index);
   */
 }
 

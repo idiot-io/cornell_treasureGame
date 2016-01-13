@@ -78,3 +78,13 @@ void matrix_circle() {
   matrix.print("X");
   matrix.show();
 }
+
+void sprite(const uint8_t* x, unsigned long y){
+  byte red = (y & 0xFF0000) >> 16;
+  byte green = ( y & 0x00FF00) >> 8;
+  byte blue = (y & 0x0000FF);
+  matrix.drawBitmap(0,0, x, 8, 8, matrix.Color(red, green, blue));
+  matrix.show();
+  //matrix.fillScreen(0);
+}
+
