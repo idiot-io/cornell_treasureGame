@@ -4,6 +4,11 @@
 #include <Adafruit_NeoMatrix.h>
 #include <Adafruit_NeoPixel.h>
 
+//sprites
+//via https://github.com/masteruan/NeoPixel-Matrix-Sprite/
+#include "Definitions.h"
+#include "Shape.h"
+
 //pin connected to bus
 #define pixpin_grid 5
 #define pixpin_BTA 6
