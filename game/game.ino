@@ -20,9 +20,8 @@ void setup() {
 
   //button stuff
   pinMode(BTN_pin, INPUT_PULLUP);
-  pinMode(BTN_pin, INPUT_PULLUP);
   debouncer.attach(BTN_pin);
-  debouncer.interval(5);
+  debouncer.interval(20);
 
 }
 
@@ -30,22 +29,18 @@ int x    = matrix.width();
 int pass = 0;
 
 void loop() {
-  pinMode(BTN_pin, INPUT_PULLUP);
-
   // Update the Bounce instance :
   debouncer.update();
-
-  if ( debouncer.fell()  ) {
-    long timer = millis() - buttonPressTimeStamp;
-    Serial.println(timer);
-    if (timer > 2000) {
+  if (debouncer.fell()) buttonPressTimeStamp = millis();
+  if ( debouncer.rose()  ) {
+    Serial.println(millis() - buttonPressTimeStamp);
+    if (millis() - buttonPressTimeStamp > 2000) {
       index = 12; //reset
       if (DEBUG) Serial.println("restart");
     } else {
       index++;
+      if (DEBUG) Serial.println(index);
     }
-    buttonPressTimeStamp = millis();
-    if (DEBUG) Serial.println(index);
   }
 
   stages(index);
