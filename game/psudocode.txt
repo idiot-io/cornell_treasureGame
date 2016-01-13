@@ -1,0 +1,91 @@
+##what code those##
+on startup all lights turn on/off for 2 seconds
+then each consecutive press will trigger a counter that follows psudocode below.
+
+shirt image > http://i.imgur.com/ExeOxVE.jpg
+
+BT1,3,5,7=3leds each (shares BUS + BT1 that is only 2 leds)
+BT2,4,6=3leds each (shares BUS)
+ST1-2=6leds each (shares BUS)
+MATRIX=64leds
+
+long btn press = reset & start over
+
+######################
+
+ startup&reset()
+{
+  all lights - on 2 sec and   off
+  BT_1 = on (2leds)
+  count=0
+}
+
+on BTN press {
+  count++
+
+          #1{
+                    ST_1 = flick (6leds)
+                    ST_2 = flick  (6leds)
+                    MATRIX = first icon (magnifying   glass)
+          }
+
+          #2{
+                    ST_1 = flick          (6leds)
+                    ST_2 = flick          (6leds)
+                    MATRIX   = second icon (circle)
+          }
+
+          #3{
+                    ST_1 = flick (6leds)
+                    ST_2 = flick (6leds)
+                    BT_4 = on (3leds)
+          }
+
+          #4{
+                    ST_1 = flick (6leds)
+                    ST_2 = flick (6leds)
+                    MATRIX   = first icon (magnifying glass)
+          }
+
+          #5{
+                    ST_1 = flick          (6leds)
+                    ST_2 = flick          (6leds)
+                    MATRIX
+                     = second icon (cercle)
+          }
+
+          #6{
+                    ST_1 = flick  (6leds)
+                    ST_2 = flick  (6leds)
+                    BT_7 = on   (3leds)
+          }
+
+          #7{
+                    ST_1 = flick          (6leds)
+                    ST_2 = flick          (6leds)
+                    BT_2 = on           (3leds)
+          }
+
+          #8{
+                    ST_1 = flick (6leds)
+                    ST_2 = flick (6leds)
+                    BT_5 = on   (3leds)
+          }
+
+          #9{
+                    ST_1 = flick          (6leds)
+                    ST_2 = flick          (6leds)
+                    BT_3 = on          (3leds)
+          }
+
+          #10{
+                    ST_1 = flick          (6leds)
+                    ST_2 = flick          (6leds)
+                    BT_6 = on          (3leds)
+          }
+
+
+          #11{
+                  all lights flick
+          }
+}
