@@ -8,8 +8,8 @@ void setup() {
   if (DEBUG) Serial.begin(57600);
 
   //LED instances
-  BT246.begin();   BT1357.begin(); ST12.begin();
-  BT246.show(); BT246.show(); ST12.show() ;
+  BTB.begin();   BTA.begin(); ST12.begin();
+  BTB.show(); BTA.show(); ST12.show() ;
 
   matrix.begin();
   matrix.setTextWrap(false);

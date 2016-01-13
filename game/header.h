@@ -4,36 +4,56 @@
 #include <Adafruit_NeoMatrix.h>
 #include <Adafruit_NeoPixel.h>
 
-//handles the button
-#include <Bounce2.h>
-
 //pin connected to bus
 #define pixpin_grid 5
-#define pixpin_BT1357 6
-#define pixpin_BT246 3
+#define pixpin_BTA 6
+#define pixpin_BTB 3
 #define pixpin_ST12 4
 
 //number of pixels in bus
 #define pixcount_grid 64
-#define pixcount_BT1357 11 //BT1 is 2 leds, rest are groups of 3
-#define pixcount_BT246 9 // groups of 3
 #define pixcount_ST12 12
+#define pixcount_BTA 11 //bta1 is 2 leds, rest are groups of 3
+int bta1 = 0;
+int bta3 = 2;
+int bta5 = 5;
+int bta7 = 8;
+#define pixcount_BTB 9 // groups of 3
+int btb2 = 0;
+int btb4 = 3;
+int btb6 = 6;
 
-Adafruit_NeoPixel BT1357 = Adafruit_NeoPixel(pixcount_BT1357, pixpin_BT1357, NEO_GRB);
-Adafruit_NeoPixel BT246 = Adafruit_NeoPixel(pixcount_BT246, pixpin_BT246, NEO_GRB);
+Adafruit_NeoPixel BTA = Adafruit_NeoPixel(pixcount_BTA, pixpin_BTA, NEO_GRB);
+Adafruit_NeoPixel BTB = Adafruit_NeoPixel(pixcount_BTB, pixpin_BTB, NEO_GRB);
 Adafruit_NeoPixel ST12 = Adafruit_NeoPixel(pixcount_ST12, pixpin_ST12, NEO_GRB);
+//to get the color you need google "hex colors"
+//you can also use plain (rrr,ggg,bbb) instead of this
+const int num_colors = 5;
+const static uint32_t BTcolors[num_colors] = {
+  0xff0000,    // red
+  0x00ff00,    // green
+  0x0000ff,    // blue
+  0x3f3f00,    // red + green
+  0x003f3f     // green + blue
+};
+
 
 Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, pixpin_grid,
                             NEO_MATRIX_TOP     + NEO_MATRIX_RIGHT +
                             NEO_MATRIX_COLUMNS + NEO_MATRIX_PROGRESSIVE,
                             NEO_GRB            + NEO_KHZ800);
+
 int x    = matrix.width();
 int pass = 0;
-const uint16_t colors[] = {
+const uint16_t colors[] = { //the colors we use
   matrix.Color(255, 0, 0), matrix.Color(0, 255, 0), matrix.Color(0, 0, 255)
 };
 
-// Instantiate a Bounce object :
+
+
+
+//handles the button
+#include <Bounce2.h>
 #define BTN_pin 2                // button on pin 2
 Bounce debouncer = Bounce();
 unsigned long buttonPressTimeStamp;

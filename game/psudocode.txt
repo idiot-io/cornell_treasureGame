@@ -21,70 +21,47 @@ long btn press = reset & start over
 }
 
 on BTN press {
-  count++
-
+    count++
+    ST_12 = flick (6leds) //every press this guys flicker then
           #1{
-                    ST_1 = flick (6leds)
-                    ST_2 = flick  (6leds)
                     MATRIX = first icon (magnifying   glass)
           }
 
           #2{
-                    ST_1 = flick          (6leds)
-                    ST_2 = flick          (6leds)
                     MATRIX   = second icon (circle)
           }
 
           #3{
-                    ST_1 = flick (6leds)
-                    ST_2 = flick (6leds)
                     BT_4 = on (3leds)
           }
 
           #4{
-                    ST_1 = flick (6leds)
-                    ST_2 = flick (6leds)
                     MATRIX   = first icon (magnifying glass)
           }
 
           #5{
-                    ST_1 = flick          (6leds)
-                    ST_2 = flick          (6leds)
-                    MATRIX
-                     = second icon (cercle)
+                    MATRIX   = second icon (cercle)
           }
 
           #6{
-                    ST_1 = flick  (6leds)
-                    ST_2 = flick  (6leds)
                     BT_7 = on   (3leds)
           }
 
           #7{
-                    ST_1 = flick          (6leds)
-                    ST_2 = flick          (6leds)
                     BT_2 = on           (3leds)
           }
 
           #8{
-                    ST_1 = flick (6leds)
-                    ST_2 = flick (6leds)
                     BT_5 = on   (3leds)
           }
 
           #9{
-                    ST_1 = flick          (6leds)
-                    ST_2 = flick          (6leds)
                     BT_3 = on          (3leds)
           }
 
           #10{
-                    ST_1 = flick          (6leds)
-                    ST_2 = flick          (6leds)
                     BT_6 = on          (3leds)
           }
-
-
           #11{
                   all lights flick
           }
