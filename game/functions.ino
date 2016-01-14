@@ -23,7 +23,7 @@ void flicker_ST12(int loop_times, int delay_time) {
     delay(delay_time);
 
     for (int iii = 0; iii < pixcount_ST12; iii++)
-      ST12.setPixelColor(iii, WHITE);
+      ST12.setPixelColor(iii, RED);
 
     ST12.show();
     delay(delay_time);
@@ -48,7 +48,7 @@ void flicker_all(int loop_times, int delay_time) {
     for (int iii = 0; iii < pixcount_BTA; iii++)
       BTA.setPixelColor(iii, WHITE);
     for (int iii = 0; iii < pixcount_ST12; iii++)
-      ST12.setPixelColor(iii, WHITE);
+      ST12.setPixelColor(iii, RED);
 
     BTB.show(); BTA.show(); ST12.show();
     delay(200);

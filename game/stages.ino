@@ -11,7 +11,7 @@ void stages(int i) {
       case 2:
         //MATRIX   = second icon (circle)
         matrix.fillScreen(0);
-        sprite(smiley, RED);
+        sprite(smiley, PURPLE);
         done = 1;
         break;
       case 3:
@@ -22,13 +22,13 @@ void stages(int i) {
       case 4:
         //MATRIX   = first icon (magnifying glass)
         matrix.fillScreen(0);
-        sprite(magnify, RED);
+        sprite(magnify, PURPLE);
         done = 1;
         break;
       case 5:
         //MATRIX   = second icon (cercle)
         matrix.fillScreen(0);
-        sprite(smiley, RED);
+        sprite(smiley, PURPLE);
         done = 1;
         break;
       case 6:
