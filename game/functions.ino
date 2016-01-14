@@ -6,24 +6,24 @@ void BTA_on(int group) {
 
 
   for (int iii = group; iii <= length; iii++)
-    BTA.setPixelColor(iii, BTcolors[1]);
+    BTA.setPixelColor(iii, WHITE);
 }
 
 void BTB_on(int group) {
   for (int iii = group; iii <= 3; iii++)
-    BTB.setPixelColor(iii, BTcolors[1]);
+    BTB.setPixelColor(iii, WHITE);
 }
 
 void flicker_ST12(int loop_times, int delay_time) {
   for (int jjj = 0; jjj < loop_times; jjj++) {
     for (int iii = 0; iii < pixcount_ST12; iii++)
-      ST12.setPixelColor(iii, BTcolors[0]);
+      ST12.setPixelColor(iii, BLACK);
 
     ST12.show();
     delay(delay_time);
 
     for (int iii = 0; iii < pixcount_ST12; iii++)
-      ST12.setPixelColor(iii, BTcolors[1]);
+      ST12.setPixelColor(iii, WHITE);
 
     ST12.show();
     delay(delay_time);
@@ -32,11 +32,11 @@ void flicker_ST12(int loop_times, int delay_time) {
 
 void alloff(){
     for (int iii = 0; iii < pixcount_BTB; iii++)
-      BTB.setPixelColor(iii, BTcolors[0]);
+      BTB.setPixelColor(iii, BLACK);
     for (int iii = 0; iii < pixcount_BTA; iii++)
-      BTA.setPixelColor(iii, BTcolors[0]);
+      BTA.setPixelColor(iii, BLACK);
     for (int iii = 0; iii < pixcount_ST12; iii++)
-      ST12.setPixelColor(iii, BTcolors[0]);
+      ST12.setPixelColor(iii, BLACK);
 
     BTB.show(); BTA.show(); ST12.show();
 }
@@ -44,21 +44,21 @@ void alloff(){
 void flicker_all(int loop_times, int delay_time) {
   for (int jjj = 0; jjj < loop_times; jjj++) {
     for (int iii = 0; iii < pixcount_BTB; iii++)
-      BTB.setPixelColor(iii, BTcolors[1]);
+      BTB.setPixelColor(iii, WHITE);
     for (int iii = 0; iii < pixcount_BTA; iii++)
-      BTA.setPixelColor(iii, BTcolors[1]);
+      BTA.setPixelColor(iii, WHITE);
     for (int iii = 0; iii < pixcount_ST12; iii++)
-      ST12.setPixelColor(iii, BTcolors[1]);
+      ST12.setPixelColor(iii, WHITE);
 
     BTB.show(); BTA.show(); ST12.show();
     delay(200);
 
     for (int iii = 0; iii < pixcount_BTB; iii++)
-      BTB.setPixelColor(iii, BTcolors[0]);
+      BTB.setPixelColor(iii, BLACK);
     for (int iii = 0; iii < pixcount_BTA; iii++)
-      BTA.setPixelColor(iii, BTcolors[0]);
+      BTA.setPixelColor(iii, BLACK);
     for (int iii = 0; iii < pixcount_ST12; iii++)
-      ST12.setPixelColor(iii, BTcolors[0]);
+      ST12.setPixelColor(iii, BLACK);
 
     BTB.show(); BTA.show(); ST12.show();
     delay(200);

@@ -5,7 +5,7 @@ void stages(int i) {
       case 1:
         //  MATRIX = first icon (magnifying   glass)
         matrix.fillScreen(0);
-        sprite(magnify, RED);
+        sprite(magnify, PURPLE);
         done = 1;
         break;
       case 2:

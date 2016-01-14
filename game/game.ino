@@ -16,6 +16,7 @@ void setup() {
   matrix.setBrightness(40);
   matrix.setTextWrap(false);
   matrix.fillScreen(0); //blank
+  matrix.show();
 
   //button stuff
   pinMode(BTN_pin, INPUT_PULLUP);
