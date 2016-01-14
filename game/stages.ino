@@ -59,8 +59,7 @@ void stages(int i) {
       case 11:
         //all lights flick
         flicker_all(5, 200);
-        done = 1;
-        break;
+        //continue to next (final stage);
       case 12:
         //restart
         alloff();

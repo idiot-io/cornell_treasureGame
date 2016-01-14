@@ -29,11 +29,11 @@ void setup() {
 }
 
 void loop() {
- 
-    // Update the Bounce instance
-    debouncer.update();
-    if (debouncer.fell()) buttonPressTimeStamp = millis();
-    if ( debouncer.rose()  ) {
+
+  // Update the Bounce instance
+  debouncer.update();
+  if (debouncer.fell()) buttonPressTimeStamp = millis();
+  if ( debouncer.rose()  ) {
     if (DEBUG) Serial.println(millis() - buttonPressTimeStamp);
     if (millis() - buttonPressTimeStamp > 2000) {
       index = 12; //reset
@@ -41,12 +41,12 @@ void loop() {
     } else {
       index++;
       flicker_ST12(5, 100); //number of loops, time of delay
-      done = 0 ; //run the stage function
       if (DEBUG) Serial.println(index);
     }
-    }
+    done = 0 ; //run the stage function
+  }
 
-    stages(index);
-  
+  stages(index);
+
 }
 
