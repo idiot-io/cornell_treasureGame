@@ -5,13 +5,20 @@ void BTA_on(int group) {
   if (group == 0) length = 2; //first group has only 2 pixels
 
 
-  for (int iii = group; iii <= length; iii++)
+  for (int iii = group; iii < (group + length); iii++) {
     BTA.setPixelColor(iii, WHITE);
+    if (DEBUG) Serial.print(iii); Serial.print(" ");
+  }
+  BTA.show();
 }
 
 void BTB_on(int group) {
-  for (int iii = group; iii <= 3; iii++)
+  for (int iii = group; iii < (group + 3); iii++) {
     BTB.setPixelColor(iii, WHITE);
+
+    if(DEBUG) Serial.print(iii); Serial.print(" ");
+  }
+  BTB.show();
 }
 
 void flicker_ST12(int loop_times, int delay_time) {
@@ -65,9 +72,9 @@ void flicker_all(int loop_times, int delay_time) {
 
     BTB.show(); BTA.show(); ST12.show();
     delay(delay_time);
-    if(DEBUG) Serial.print("flicker: "); Serial.println(jjj);
+    if (DEBUG) Serial.print("flicker: "); Serial.println(jjj);
   }
-  if(DEBUG)Serial.println("end flivckerr all");
+  if (DEBUG)Serial.println("end flivckerr all");
 }
 
 void sprite(const uint8_t* x, unsigned long y) {
