@@ -2,6 +2,9 @@
 void stages(int i) {
   switch (i) {
       if (!done) {
+        case 0:
+         BTA_on(bta1);
+         break;
       case 1:
         //  MATRIX = first icon (magnifying   glass)
         matrix.fillScreen(0);

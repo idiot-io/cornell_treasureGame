@@ -7,7 +7,7 @@ void BTA_on(int group) {
 
   for (int iii = group; iii < (group + length); iii++) {
     BTA.setPixelColor(iii, WHITE);
-    if (DEBUG) Serial.print(iii); Serial.print(" ");
+   // if (DEBUG) Serial.print(iii); Serial.print(" ");
   }
   BTA.show();
 }
@@ -16,7 +16,7 @@ void BTB_on(int group) {
   for (int iii = group; iii < (group + 3); iii++) {
     BTB.setPixelColor(iii, WHITE);
 
-    if(DEBUG) Serial.print(iii); Serial.print(" ");
+ //   if(DEBUG) Serial.print(iii); Serial.print(" ");
   }
   BTB.show();
 }
