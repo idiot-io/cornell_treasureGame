@@ -86,3 +86,20 @@ void sprite(const uint8_t* x, unsigned long y) {
   //matrix.fillScreen(0);
 }
 
+void soundFX(int loop_times){
+  
+  for (int jjj = 0; jjj <= loop_times; jjj++) {
+  tone(9, 440, 100);
+  delay(200);
+  tone(9, 540, 100);
+  delay(200);
+  tone(9, 340, 100);
+  delay(200);
+  tone(9, 640, 100);
+  delay(200);
+  
+  }
+  
+}
+
+
