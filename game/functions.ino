@@ -86,20 +86,33 @@ void sprite(const uint8_t* x, unsigned long y) {
   //matrix.fillScreen(0);
 }
 
-void soundFX(int loop_times){
-  
-  for (int jjj = 0; jjj <= loop_times; jjj++) {
-  tone(9, 440, 100);
-  delay(200);
-  tone(9, 540, 100);
-  delay(200);
-  tone(9, 340, 100);
-  delay(200);
-  tone(9, 640, 100);
-  delay(200);
-  
+
+
+
+void soundFX(){
+ 
+// notes in the melody:
+int melody[] = {440,540, 340, 640};
+// note durations: 4 = quarter note, 8 = eighth note, etc.:
+int noteDurations[] = { 6, 6, 6, 6};
+ // iterate over the notes of the melody:
+  for (int thisNote = 0; thisNote < 4; thisNote++) {
+    //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+    int noteDuration = 1000 / noteDurations[thisNote];
+    tone(9, melody[thisNote], noteDuration);
+
+    // to distinguish the notes, set a minimum time between them.
+    // the note's duration + 30% seems to work well:
+    int pauseBetweenNotes = noteDuration * 1.1;
+    Serial.println(pauseBetweenNotes);
+    Serial.println(thisNote);
+    delay(pauseBetweenNotes);
+     // stop the tone playing:
+    noTone(9);
   }
-  
+ 
 }
+
+
 
 

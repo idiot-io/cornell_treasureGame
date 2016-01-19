@@ -9,7 +9,7 @@ void stages(int i) {
         //  MATRIX = first icon (magnifying   glass)
         matrix.fillScreen(0);
         sprite(magnify, PURPLE);
-        soundFX(1);
+        soundFX();
         done = 1;
         break;
       case 2:

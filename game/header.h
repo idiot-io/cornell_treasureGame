@@ -9,6 +9,9 @@
 #include "Definitions.h"
 #include "Shape.h"
 
+//tone melody digital examples
+#include "pitches.h"
+
 //pin connected to bus
 #define pixpin_grid 5
 #define pixpin_BTA 6
