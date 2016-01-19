@@ -7,7 +7,7 @@ void BTA_on(int group) {
 
   for (int iii = group; iii < (group + length); iii++) {
     BTA.setPixelColor(iii, WHITE);
-   // if (DEBUG) Serial.print(iii); Serial.print(" ");
+    // if (DEBUG) Serial.print(iii); Serial.print(" ");
   }
   BTA.show();
 }
@@ -16,7 +16,7 @@ void BTB_on(int group) {
   for (int iii = group; iii < (group + 3); iii++) {
     BTB.setPixelColor(iii, WHITE);
 
- //   if(DEBUG) Serial.print(iii); Serial.print(" ");
+    //   if(DEBUG) Serial.print(iii); Serial.print(" ");
   }
   BTB.show();
 }
@@ -89,28 +89,25 @@ void sprite(const uint8_t* x, unsigned long y) {
 
 
 
-void soundFX(){
- 
-// notes in the melody:
-int melody[] = {440,540, 340, 640};
-// note durations: 4 = quarter note, 8 = eighth note, etc.:
-int noteDurations[] = { 6, 6, 6, 6};
- // iterate over the notes of the melody:
-  for (int thisNote = 0; thisNote < 4; thisNote++) {
+void soundFX() {
+  for (int thisNote = 0; thisNote < 8; thisNote++) {
+
+    // to calculate the note duration, take one second
+    // divided by the note type.
     //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
     int noteDuration = 1000 / noteDurations[thisNote];
-    tone(9, melody[thisNote], noteDuration);
+    tone(8, melody[thisNote], noteDuration);
 
     // to distinguish the notes, set a minimum time between them.
     // the note's duration + 30% seems to work well:
-    int pauseBetweenNotes = noteDuration * 1.1;
+    int pauseBetweenNotes = noteDuration * 1.30;
+    delay(pauseBetweenNotes);
     Serial.println(pauseBetweenNotes);
     Serial.println(thisNote);
-    delay(pauseBetweenNotes);
-     // stop the tone playing:
-    noTone(9);
+    // stop the tone playing:
+    noTone(8);
   }
- 
+
 }
 
 

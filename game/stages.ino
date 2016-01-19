@@ -2,9 +2,9 @@
 void stages(int i) {
   switch (i) {
       if (!done) {
-        case 0:
-         BTA_on(bta1);
-         break;
+      case 0:
+        BTA_on(bta1);
+        break;
       case 1:
         //  MATRIX = first icon (magnifying   glass)
         matrix.fillScreen(0);
@@ -63,7 +63,7 @@ void stages(int i) {
       case 11:
         //all lights flick
         flicker_all(5, 200);
-        //continue to next (final stage);
+      //continue to next (final stage);
       case 12:
         //restart
         alloff();
