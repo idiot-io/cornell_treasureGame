@@ -33,10 +33,15 @@ Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(8, 8, pixpin_grid,
                             NEO_GRB            + NEO_KHZ800);
 
 //handles the button
-#include <Bounce2.h>
-#define BTN_pin 2                // button on pin 2
-Bounce debouncer = Bounce();
+#define buttonPin 2                // button on pin 2
+int ledState = HIGH;         // the current state of the output pin
+int buttonState;             // the current reading from the input pin
+int lastButtonState = LOW;   // the previous reading from the input pin
+long lastDebounceTime = 0;  // the last time the output pin was toggled
+long debounceDelay = 50;    // the debounce time; increase if the output flickers
 unsigned long buttonPressTimeStamp;
+
+//stage init
 int index = 0;
 boolean done = false;
 

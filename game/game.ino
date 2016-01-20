@@ -19,34 +19,43 @@ void setup() {
   matrix.show();
 
   //button stuff
-  pinMode(BTN_pin, INPUT_PULLUP);
-  debouncer.attach(BTN_pin);
-  debouncer.interval(20);
+  pinMode(buttonPin, INPUT_PULLUP);
 
   index = 0;
   flicker_all(2, 2000);
- 
+
 
 }
 
 void loop() {
- 
-  // Update the Bounce instance
-  debouncer.update();
-  if (debouncer.fell()) buttonPressTimeStamp = millis();
-  if ( debouncer.rose()  ) {
-    if (DEBUG) Serial.println(millis() - buttonPressTimeStamp);
-    if (millis() - buttonPressTimeStamp > 2000) {
-      index = 12; //reset
-      if (DEBUG) Serial.println("restart");
-    } else {
-      index++;
-      flicker_ST12(5, 100); //number of loops, time of delay
-      if (DEBUG) Serial.println(index);
+  int reading = digitalRead(buttonPin);
+  if (reading != lastButtonState)
+    lastDebounceTime = millis();
+
+  if (millis() - lastDebounceTime > debounceDelay) {
+    if (reading != buttonState) {
+      buttonState = reading;
+
+      if (buttonState == HIGH) {
+        Serial.println(millis() - buttonPressTimeStamp);
+        if (millis() - buttonPressTimeStamp > 1000) {
+          index = 12; //reset
+          if (DEBUG) Serial.println("restart");
+        } else {
+          index++;
+          flicker_ST12(5, 100); //number of loops, time of delay
+          if (DEBUG) Serial.println(index);
+        }
+        done = 0 ; //run the stage function
+        
+      } else if (buttonState == LOW) {
+        buttonPressTimeStamp = millis();
+      }
+
     }
-    done = 0 ; //run the stage function
   }
 
+  lastButtonState = reading;
   stages(index);
 
 }
