@@ -11,8 +11,8 @@
 
 //pin connected to bus
 #define pixpin_grid 5
-#define pixpin_BTA 6
-#define pixpin_BTB 3
+#define pixpin_BTA 3
+#define pixpin_BTB 6
 #define pixpin_ST12 4 
 
 //number of pixels in bus
